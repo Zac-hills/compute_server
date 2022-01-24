@@ -1,12 +1,11 @@
 
+import json
 import struct
 from tarfile import SUPPORTED_TYPES
-
-from transformers import AutoTokenizer
-
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from typing import List
-import json
+
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+
 
 class Model:
     def __init__(self, model_name: str) -> None:
@@ -23,7 +22,9 @@ class Model:
 
 class TranslateModelFactory:
     SUPPORTED_TRANSLATIONS = {
-        "french->english" : "Helsinki-NLP/opus-mt-fr-en"
+        "french->english" : "Helsinki-NLP/opus-mt-fr-en",
+        "finnish->english" : "Helsinki-NLP/opus-tatoeba-fi-en",
+        "ukranian->english" : "Helsinki-NLP/opus-mt-uk-en"
     }
 
     def create_key(self, source: str, dest: str) -> str:
