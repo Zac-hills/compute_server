@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from .controllers import translation_controller
+from .controllers import controller
 
 app = FastAPI()
 
-app.include_router(translation_controller.router)
+app.include_router(controller.router)
